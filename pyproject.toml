@@ -1,0 +1,24 @@
+[project]
+name = "mr-trader"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "apache-airflow==3.1.4",
+]
+
+[project.scripts]
+standalone = "scripts.run_standalone:main"
+webserver = "scripts.run_webserver:main"
+scheduler = "scripts.run_scheduler:main"
+triggerer = "scripts.run_triggerer:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
+
